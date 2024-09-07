@@ -53,7 +53,7 @@
                         bindings = <
    &kp ESC   &none &none &none         &none          &none       &none     &kp HOME &kp UP   &kp END   &none &kp DEL
    &none     &none &none &kp PG_UP     &kp PG_DN      &none       &none     &kp LEFT &kp DOWN &kp RIGHT &none &trans
-   &kp LSHFT &none &none &LCTRL        &LALT          &none       &none     &none    &none    &none     &none &none 
+   &kp LSHFT &none &none &kp LCTRL     &kp LALT       &none       &none     &none    &none    &none     &none &none 
                          &kp LC(LSHFT) &kp LA(LSHFT)  &kp SPACE   &kp SPACE &trans   &none
                         >;
                 };
