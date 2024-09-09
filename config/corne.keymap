@@ -18,7 +18,7 @@
           };
 
           &mt {
-               tap-preferred;
+               flavor = "tap-preferred";
           };
 
         keymap {
