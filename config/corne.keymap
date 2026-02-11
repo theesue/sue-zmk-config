@@ -67,7 +67,7 @@
                     display-name = "Num";
                     bindings = <
      &mt ESC GRAVE       &none               &none               &none               &none               &none                   &none               &kp MINUS           &kp EQUAL            &kp RBKT           &kp LBKT            &kp BSPC
-     &mt trans           &kp N1              &kp N2              &kp N3              &kp N4              &kp N5                  &kp N6              &kp N7              &kp N8               &kp N9             &kp N0              &none
+     &trans              &kp N1              &kp N2              &kp N3              &kp N4              &kp N5                  &kp N6              &kp N7              &kp N8               &kp N9             &kp N0              &none
      &sk LSHFT           &none               &none               &none               &none               &none                   &none               &none               &none                &none              &kp BSLH            &sk RSHFT
                                                                  &trans              &trans              &kp SPACE               &kp RET             &trans              &kp N0
                     >;
