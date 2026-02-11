@@ -66,29 +66,29 @@
                num_layer {
                     display-name = "Num";
                     bindings = <
-     &mt (ESC) (GRAVE)   &none               &none               &none               &none               &none                   &none               &MINUS              &EQUAL               &RBKT              &LBKT               &kp BSPC
-     &mt LCTRL           &kp N1              &kp N2              &kp N3              &kp N4              &kp N5                  &kp N6              &kp N7              &kp N8               &kp N9             &kp N0              &none
+     &mt ESC GRAVE       &none               &none               &none               &none               &none                   &none               &kp MINUS           &kp EQUAL            &kp RBKT           &kp LBKT            &kp BSPC
+     &mt trans           &kp N1              &kp N2              &kp N3              &kp N4              &kp N5                  &kp N6              &kp N7              &kp N8               &kp N9             &kp N0              &none
      &sk LSHFT           &none               &none               &none               &none               &none                   &none               &none               &none                &none              &kp BSLH            &sk RSHFT
                                                                  &trans              &trans              &kp SPACE               &kp RET             &trans              &kp N0
                     >;
                };
 
 
-// ----------------------------------------------------------   -------------------------------------------
-// | `ESC |          |          |          |          |     |   |     |  HOME  |  UP  |  END  |     | DEL |
-// |      | LS(HOME) | LS(END)  |   PGUP   |   PGDN   |     |   |     |  LFT   |  DWN |  RGT  |     |     |
-// | SHFT | LC(SHFT) | LA(SHFT) |   CTRL   |   ALT    |     |   |     |        |      |       |     |     |
-// |                            |   GUI    |   NUM    | SPC |   | ENT |        |      |                   |
-// ----------------------------------------------------------   -------------------------------------------
+// --------------------------------------------------------------   ------------------------------------------------
+// | `ESC |          |          |            |            |     |   |     |  HOME  |  PGUP  |  PGDN  |  END  | DEL |
+// | CTRL | LS(HOME) | LS(END)  |  LC(SHFT)  |  LA(SHFT)  |     |   |     |  LFT   |  DWN   |  UP    |  RGT  |     |
+// | SHFT |          |          |            |   ALT      |     |   |     |        |        |        |       |     |
+// |                            |   GUI      |   NUM      | SPC |   | ENT |        |        |                      |
+// --------------------------------------------------------------   ------------------------------------------------
                nav_layer {
                     display-name = "Nav";
                     bindings = <
-     &mt (ESC) (GRAVE)   &none               &none               &none               &none               &none                   &none               &kp HOME            &kp UP              &kp END             &none               &kp DEL
-     &none               &kp LS(HOME)        &kp LS(END)         &kp PG_UP           &kp PG_DN           &none                   &none               &kp LEFT            &kp DOWN            &kp UP              &kp RIGHT           &trans
-     &kp LSHFT           &kp LC(LSHFT)       &kp LA(LSHFT)       &kp LCTRL           &kp LALT            &none                   &none               &none               &none               &none               &none               &none 
+     &mt ESC GRAVE       &none               &none               &none               &none               &none                   &none               &kp HOME            &kp PG_UP           &kp PG_DN           &kp END             &kp DEL
+     &trans              &kp LS(HOME)        &kp LS(END)         &kp LC(LSHFT)       &kp LA(LSHFT)       &none                   &none               &kp LEFT            &kp DOWN            &kp UP              &kp RIGHT           &none
+     &kp LSHFT           &none               &none               &none               &kp LALT            &none                   &none               &none               &none               &none               &none               &none 
                                                                  &trans              &trans              &kp SPACE               &kp RET             &trans              &none
                     >;
-               };
+               };\
 // ---------------------------------------   --------------------------------------------------
 // | BTCLR | BT1 | BT2 | BT3 |     |     |   |     | PREV   | NEXT   | PLAY/PAUSE |     |     |
 // |       |     |     |     |     |     |   |     | VOL_DN | VOL_UP | MUTE       |     |     |
