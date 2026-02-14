@@ -26,6 +26,7 @@
           // COMBO CONFIGS
           combos {
                compatible = "zmk,combos";
+ 
                combo_lshft {
                     timeout-ms = <30>;
                     key-positions = <9 10>;
