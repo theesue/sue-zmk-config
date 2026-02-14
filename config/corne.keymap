@@ -36,7 +36,7 @@
                combo_lctrl {
                     timeout-ms = <40>;
                     key-positions = <14 15>;
-                    dt-bindings = <&kp LCTRL>;
+                    bindings = <&kp LCTRL>;
                };
 
                combo_lshft {
@@ -50,7 +50,7 @@
                     key-positions = <14 15 16>;
                     bindings = <&kp TAB>;
                };
-               
+
                combo_rshft {
                     timeout-ms = <40>;
                     key-positions = <19 20>;
