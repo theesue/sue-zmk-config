@@ -28,13 +28,13 @@
                compatible = "zmk,combos";
  
                combo_lshft {
-                    timeout-ms = <30>;
+                    timeout-ms = <40>;
                     key-positions = <15 16>;
                     bindings = <&kp LSHFT>;
                };
 
                combo_lgui {
-                    timeout-ms = <30>;
+                    timeout-ms = <40>;
                     key-positions = <13 14>;
                     bindings = <&kp LGUI>;
                };
@@ -46,13 +46,13 @@
                };
                
                combo_rshft {
-                    timeout-ms = <30>;
+                    timeout-ms = <40>;
                     key-positions = <19 20>;
                     bindings = <&kp RSHFT>;
                };
 
                combo_rgui {
-                    timeout-ms = <30>;
+                    timeout-ms = <40>;
                     key-positions = <21 22>;
                     bindings = <&kp RGUI>;
                };
