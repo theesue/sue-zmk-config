@@ -75,7 +75,7 @@
 // |                  | GUI | Num | SPC |   | ENT | NAV | ALT |                      |
 // --------------------------------------   ------------------------------------------
                default_layer {
-                    display-name = "BASE";
+                    display-name = "Base";
                     bindings = <
 //     &kp TAB               &kp Q                 &kp W                 &kp E                 &kp R                 &kp T                     &kp Y                 &kp U                 &kp I                 &kp O                 &kp P                 &kp BSPC 
 //     &kp LCTRL             &kp A                 &kp S                 &kp D                 &kp F                 &kp G                     &kp H                 &kp J                 &kp K                 &kp L                 &kp SEMI              &kp SQT 
@@ -105,7 +105,7 @@
 // |                    |  GUI |  NUM |      |   |  SPC |  NAV |      |                   |
 // -------------------------------------------   ------------------------------------------
                num_layer {
-                    display-name = "NUM";
+                    display-name = "Num";
                     bindings = <
      &mt ESC GRAVE       &none               &none               &none               &none               &none                   &kp LBKT            &kp RBKT            &kp LBRC             &kp RBRC           &trans             &trans
      &trans              &kp N1              &kp N2              &kp N3              &kp N4              &kp N5                  &kp N6              &kp N7              &kp N8               &kp N9             &kp N0             &trans
@@ -122,7 +122,7 @@
 // |                            |   GUI      |   NUM      | DEL |   | SPC |  NAV   |        |                      |
 // --------------------------------------------------------------   ------------------------------------------------
                nav_layer {
-                    display-name = "NAV";
+                    display-name = "Nav";
                     bindings = <
      &mt ESC GRAVE       &none               &none               &none               &none               &none                   &none               &kp HOME            &kp PG_UP           &kp PG_DN           &kp END             &none
      &trans              &kp LS(HOME)        &kp LS(END)         &kp LC(LSHFT)       &kp LA(LSHFT)       &none                   &none               &kp LEFT            &kp DOWN            &kp UP              &kp RIGHT           &none
@@ -139,7 +139,7 @@
 // |                   |     |     |     |   |     |        |            |                    |
 // ---------------------------------------   --------------------------------------------------
                media_layer {
-                    display-name = "MEDIA";
+                    display-name = "Media";
                     bindings = <
      &none     &none     &none     &none     &none      &none              &none          &kp C_PREV     &kp C_PP      &kp C_NEXT      &none          &none
      &none     &none     &none     &none     &none      &none              &none          &kp C_VOL_DN   &kp C_MUTE    &kp C_VOL_UP    &none          &none
@@ -155,7 +155,7 @@
 // |                   | BTCLR |     |     |   |     |     |     |     |
 // -----------------------------------------   -------------------------------------
                bluetooth_layer {
-                    display-name = "BLETH";
+                    display-name = "Ble";
                     bindings = <
      &none     &none          &none          &none          &none          &none            &none     &none     &none     &none       &none      &none
      &none     &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4     &none     &none     &none     &none       &none      &none
