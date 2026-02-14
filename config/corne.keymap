@@ -60,7 +60,7 @@
                combo_rctrl {
                     timeout-ms = <40>;
                     key-positions = <20 21>;
-                    dt-bindings = <&kp RCTRL>;
+                    bindings = <&kp RCTRL>;
                };
 
                combo_rgui {
