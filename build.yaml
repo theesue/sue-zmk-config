@@ -20,7 +20,7 @@
 include:
   - board: nice_nano
     shield: corne_left nice_view nice_view_adapter
-    snippet: studio-rpc-usb-uart spi
+    snippet: studio-rpc-usb-uart nice_view_spi
   - board: nice_nano
     shield: corne_right nice_view nice_view_adapter
-    snippet: spi
+    snippet: nice_view_spi
