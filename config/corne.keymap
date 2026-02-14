@@ -27,21 +27,27 @@
           combos {
                compatible = "zmk,combos";
  
-               combo_lshft {
-                    timeout-ms = <40>;
-                    key-positions = <15 16>;
-                    bindings = <&kp LSHFT>;
-               };
-
                combo_lgui {
                     timeout-ms = <40>;
                     key-positions = <13 14>;
                     bindings = <&kp LGUI>;
                };
 
+               combo_lctrl {
+                    timeout-ms = <40>;
+                    key-positions = <14 15>;
+                    dt-bindings = <&kp LCTRL>;
+               };
+
+               combo_lshft {
+                    timeout-ms = <40>;
+                    key-positions = <15 16>;
+                    bindings = <&kp LSHFT>;
+               };
+
                combo_ltab {
                     timeout-ms = <50>;
-                    key-positions = <13 14 15 16>;
+                    key-positions = <14 15 16>;
                     bindings = <&kp TAB>;
                };
                
@@ -49,6 +55,12 @@
                     timeout-ms = <40>;
                     key-positions = <19 20>;
                     bindings = <&kp RSHFT>;
+               };
+
+               combo_lctrl {
+                    timeout-ms = <40>;
+                    key-positions = <20 21>;
+                    dt-bindings = <&kp RCTRL>;
                };
 
                combo_rgui {
@@ -59,7 +71,7 @@
 
                combo_renter {
                     timeout-ms = <50>;
-                    key-positions = <19 20 21 22>;
+                    key-positions = <20 21 22>;
                     bindings = <&kp ENTER>;
                };
           };
@@ -72,7 +84,7 @@
 // | TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |   BKSP   |
 // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |   '      |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |   SHFT   |
-// |                  | GUI | Num | SPC |   | ENT | NAV | ALT |                      |
+// |                  | GUI | NUM | SPC |   | ENT | NAV | ALT |                      |
 // --------------------------------------   ------------------------------------------
                default_layer {
                     display-name = "Base";
@@ -84,33 +96,33 @@
 
 // COLEMAK MOD-DH LAYOUT
 // ---------------------------------------   ---------------------------------------
-// | TAB  |  Q  |  W  |  F  |  P  |  B   |   |  J  |  L  |  U  |  Y  |  -  |   =   |
-// | CTRL |  A  |  R  |  S  |  T  |  G   |   |  M  |  N  |  E  |  I  |  O  |   ;   |
-// | SHFT |  Z  |  X  |  C  |  D  |  V   |   |  K  |  H  |  ,  |  .  |  /  |   '   |
-// |                  | GUI | NUM | BKSP |   | SPC | NAV | ALT |                   |
+// | `    |  Q  |  W  |  F  |  P  |  B   |   |  J  |  L  |  U  |  Y  |  -  |   =   |
+// | ESC  |  A  |  R  |  S  |  T  |  G   |   |  M  |  N  |  E  |  I  |  O  |   ;   |
+// |      |  Z  |  X  |  C  |  D  |  V   |   |  K  |  H  |  ,  |  .  |  /  |   '   |
+// |                  | DEL | NUM | BKSP |   | SPC | NAV | ALT |                   |
 // ---------------------------------------   ---------------------------------------
 
-     &kp TAB            &kp Q              &kp W              &kp F              &kp P              &kp B                  &kp J              &kp L              &kp U              &kp Y              &kp MINUS          &kp EQUAL
-     &kp LCTRL          &kp A              &kp R              &kp S              &kp T              &kp G                  &kp M              &kp N              &kp E              &kp I              &kp O              &kp SEMI 
-     &sk LSHFT          &kp Z              &kp X              &kp C              &kp D              &kp V                  &kp K              &kp H              &kp COMMA          &kp DOT            &kp FSLH           &kp SQT  
-                                                              &kp LGUI           &mo 1              &kp BSPC               &kp SPACE          &mo 2              &kp RALT
+     &kp GRAVE          &kp Q              &kp W              &kp F              &kp P              &kp B                  &kp J              &kp L              &kp U              &kp Y              &kp MINUS          &kp EQUAL
+     &kp ESC            &kp A              &kp R              &kp S              &kp T              &kp G                  &kp M              &kp N              &kp E              &kp I              &kp O              &kp SEMI 
+     &none              &kp Z              &kp X              &kp C              &kp D              &kp V                  &kp K              &kp H              &kp COMMA          &kp DOT            &kp FSLH           &kp SQT  
+                                                              &kp DEL            &mo 1              &kp BSPC               &kp SPACE          &mo 2              &kp RALT
                     >;
                };
 
 
-// -------------------------------------------   ------------------------------------------
-// | `ESC |      |      |      |      |      |   |  [   |  ]   |  {   |  }   |  -   |  =  |
-// | CTRL |  1   |  2   |  3   |  4   |  5   |   |  6   |  7   |  8   |  9   |  0   |  ;  |
-// | SHFT |      |      |      |      |      |   |      |      |  ,   |  .   |  /   |  \  |
-// |                    |  GUI |  NUM |      |   |  SPC |  NAV |      |                   |
-// -------------------------------------------   ------------------------------------------
+// --------------------------------------   -------------------------------------
+// | `ESC |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |     |
+// |      |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |     |
+// |      |     |     |     |     |     |   |     |  [  |  ]  |  {  |  }  |     |
+// |                  |     | NUM |     |   | SPC | NAV | ALT |                 |
+// --------------------------------------   -------------------------------------
                num_layer {
                     display-name = "Num";
                     bindings = <
-     &mt ESC GRAVE       &none               &none               &none               &none               &none                   &kp LBKT            &kp RBKT            &kp LBRC             &kp RBRC           &trans             &trans
-     &trans              &kp N1              &kp N2              &kp N3              &kp N4              &kp N5                  &kp N6              &kp N7              &kp N8               &kp N9             &kp N0             &trans
-     &sk LSHFT           &none               &none               &none               &none               &none                   &none               &none               &trans               &trans             &trans             &kp BSLH
-                                                                 &trans              &trans              &none                   &kp SPACE           &trans              &kp N0
+     &mt ESC GRAVE       &kp EXCL            &kp AT              &kp HASH            &kp DLLR            &kp PRCNT               &kp CARET           &kp AMPS            &kp ASTRK            &kp LPAR           &kp RPAR           &none
+     &none               &kp N1              &kp N2              &kp N3              &kp N4              &kp N5                  &kp N6              &kp N7              &kp N8               &kp N9             &kp N0             &none
+     &none               &none               &none               &none               &none               &none                   &none               &kp LBKT            &kp RBKT             &kp LBRC           &kp RBRC           &none
+                                                                 &none               &trans              &none                   &kp SPACE           &trans              &trans
                     >;
                };
 
@@ -127,7 +139,7 @@
      &mt ESC GRAVE       &none               &none               &none               &none               &none                   &none               &kp HOME            &kp PG_UP           &kp PG_DN           &kp END             &none
      &trans              &kp LS(HOME)        &kp LS(END)         &kp LC(LSHFT)       &kp LA(LSHFT)       &none                   &none               &kp LEFT            &kp DOWN            &kp UP              &kp RIGHT           &none
      &kp LSHFT           &none               &none               &none               &kp LALT            &none                   &none               &none               &none               &none               &none               &none 
-                                                                 &trans              &trans              &kp DEL                 &kp SPACE               &trans              &none
+                                                                 &trans              &trans              &kp DEL                 &kp SPACE           &trans              &none
                     >;
                };
 
@@ -135,7 +147,7 @@
 // ---------------------------------------   --------------------------------------------------
 // | BTCLR | BT1 | BT2 | BT3 |     |     |   |     | PREV   | PLAY/PAUSE | NEXT   |     |     |
 // |       |     |     |     |     |     |   |     | VOL_DN | MUTE       | VOL_UP |     |     |
-// | BLUTH |     |     |     |     |     |   |     |        |            |        |     |     |
+// | BLETH |     |     |     |     |     |   |     |        |            |        |     |     |
 // |                   |     |     |     |   |     |        |            |                    |
 // ---------------------------------------   --------------------------------------------------
                media_layer {
