@@ -17,10 +17,44 @@
 / {
           conditional_layers {
                 compatible = "zmk,conditional-layers";
-                bt_layer {
+                media_layer {
                         if-layers = <1 2>;
                         then-layer = <3>;
                 };
+          };
+
+          // COMBO CONFIGS
+          combos {
+               compatible = "zmk,combos";
+               combo_lshft {
+                    timeout-ms = <30>;
+                    key-positions = <9 10>;
+                    bindings = <&kp LSHFT>;
+               };
+
+               combo_lgui {
+                    timeout-ms = <30>;
+                    key-positions = <7 8>;
+                    bindings = <&kp LGUI>;
+               };
+
+               combo_ltab {
+                    timeout-ms = <30>;
+                    key-positions = <8 9 10>;
+                    bindings = <&kp TAB>;
+               };
+               
+               combo_rshft {
+                    timeout-ms = <30>;
+                    key-positions = <28 29>;
+                    bindings = <&kp RSHFT>;
+               };
+
+               combo_rgui {
+                    timeout-ms = <30>;
+                    key-positions = <30 31>;
+                    bindings = <&kp RGUI>;
+               };
           };
 
         keymap {
@@ -34,81 +68,92 @@
 // |                  | GUI | Num | SPC |   | ENT | NAV | ALT |                      |
 // --------------------------------------   ------------------------------------------
                default_layer {
-                    display-name = "Base";
+                    display-name = "BASE";
                     bindings = <
 //     &kp TAB               &kp Q                 &kp W                 &kp E                 &kp R                 &kp T                     &kp Y                 &kp U                 &kp I                 &kp O                 &kp P                 &kp BSPC 
 //     &kp LCTRL             &kp A                 &kp S                 &kp D                 &kp F                 &kp G                     &kp H                 &kp J                 &kp K                 &kp L                 &kp SEMI              &kp SQT 
 //     &sk LSHFT             &kp Z                 &kp X                 &kp C                 &kp V                 &kp B                     &kp N                 &kp M                 &kp COMMA             &kp DOT               &kp FSLH              &sk RSHFT  
-//                                                                       &kp LGUI              &mo 1                 &kp SPACE                 &kp RET               &mo 2                 &kp RALT
+//                                                                       &kp LGUI              &mo 1                 &kp BSPC                  &kp SPACE             &mo 2                 &kp RALT
 
 // COLEMAK MOD-DH LAYOUT
-// --------------------------------------   ------------------------------------------
-// | TAB  |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  ;  |   BKSP   |
-// | CTRL |  A  |  R  |  S  |  T  |  G  |   |  M  |  N  |  E  |  I  |  O  |   '      |
-// | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  |   SHFT   |
-// |                  | GUI | Num | SPC |   | ENT | NAV | ALT |                      |
-// --------------------------------------   ------------------------------------------
+// ---------------------------------------   ---------------------------------------
+// | TAB  |  Q  |  W  |  F  |  P  |  B   |   |  J  |  L  |  U  |  Y  |  -  |   =   |
+// | CTRL |  A  |  R  |  S  |  T  |  G   |   |  M  |  N  |  E  |  I  |  O  |   ;   |
+// | SHFT |  Z  |  X  |  C  |  D  |  V   |   |  K  |  H  |  ,  |  .  |  /  |   '   |
+// |                  | GUI | NUM | BKSP |   | SPC | NAV | ALT |                   |
+// ---------------------------------------   ---------------------------------------
 
-     &kp TAB            &kp Q              &kp W              &kp F              &kp P              &kp B                  &kp J              &kp L              &kp U              &kp Y              &kp SEMI           &kp BSPC
-     &kp LCTRL          &kp A              &kp R              &kp S              &kp T              &kp G                  &kp M              &kp N              &kp E              &kp I              &kp O              &kp SQT 
-     &sk LSHFT          &kp Z              &kp X              &kp C              &kp D              &kp V                  &kp K              &kp H              &kp COMMA          &kp DOT            &kp FSLH           &sk RSHFT  
-                                                              &kp LGUI           &mo 1              &kp SPACE              &kp RET            &mo 2              &kp RALT
+     &kp TAB            &kp Q              &kp W              &kp F              &kp P              &kp B                  &kp J              &kp L              &kp U              &kp Y              &kp MINUS          &kp EQUAL
+     &kp LCTRL          &kp A              &kp R              &kp S              &kp T              &kp G                  &kp M              &kp N              &kp E              &kp I              &kp O              &kp SEMI 
+     &sk LSHFT          &kp Z              &kp X              &kp C              &kp D              &kp V                  &kp K              &kp H              &kp COMMA          &kp DOT            &kp FSLH           &kp SQT  
+                                                              &kp LGUI           &mo 1              &kp BSPC               &kp SPACE          &mo 2              &kp RALT
                     >;
                };
 
 
-// -------------------------------------------   -------------------------------------------
-// | `ESC |      |      |      |      |      |   |      |  -   |  =   |  [   |  ]   | BKSP |
-// | CTRL |  1   |  2   |  3   |  4   |  5   |   |  6   |  7   |  8   |  9   |  0   |      |
-// | SHFT |      |      |      |      |      |   |      |      |      |      |  \   | SHFT |
-// |                    |  GUI |  Num |  SPC |   |  ENT |  NAV |      |                    |
-// -------------------------------------------   -------------------------------------------
+// -------------------------------------------   ------------------------------------------
+// | `ESC |      |      |      |      |      |   |  [   |  ]   |  {   |  }   |  -   |  =  |
+// | CTRL |  1   |  2   |  3   |  4   |  5   |   |  6   |  7   |  8   |  9   |  0   |  ;  |
+// | SHFT |      |      |      |      |      |   |      |      |  ,   |  .   |  /   |  \  |
+// |                    |  GUI |  NUM |      |   |  SPC |  NAV |      |                   |
+// -------------------------------------------   ------------------------------------------
                num_layer {
-                    display-name = "Num";
+                    display-name = "NUM";
                     bindings = <
-     &mt ESC GRAVE       &none               &none               &none               &none               &none                   &none               &kp MINUS           &kp EQUAL            &kp RBKT           &kp LBKT            &kp BSPC
-     &trans              &kp N1              &kp N2              &kp N3              &kp N4              &kp N5                  &kp N6              &kp N7              &kp N8               &kp N9             &kp N0              &none
-     &sk LSHFT           &none               &none               &none               &none               &none                   &none               &none               &none                &none              &kp BSLH            &sk RSHFT
-                                                                 &trans              &trans              &kp SPACE               &kp RET             &trans              &kp N0
+     &mt ESC GRAVE       &none               &none               &none               &none               &none                   &kp LBKT            &kp RBKT            &kp LBRC             &kp RBRC           &trans             &trans
+     &trans              &kp N1              &kp N2              &kp N3              &kp N4              &kp N5                  &kp N6              &kp N7              &kp N8               &kp N9             &kp N0             &trans
+     &sk LSHFT           &none               &none               &none               &none               &none                   &none               &none               &trans               &trans             &trans             &kp BSLH
+                                                                 &trans              &trans              &none                   &kp SPACE           &trans              &kp N0
                     >;
                };
 
 
 // --------------------------------------------------------------   ------------------------------------------------
-// | `ESC |          |          |            |            |     |   |     |  HOME  |  PGUP  |  PGDN  |  END  | DEL |
+// | `ESC |          |          |            |            |     |   |     |  HOME  |  PGUP  |  PGDN  |  END  |     |
 // | CTRL | LS(HOME) | LS(END)  |  LC(SHFT)  |  LA(SHFT)  |     |   |     |  LFT   |  DWN   |  UP    |  RGT  |     |
 // | SHFT |          |          |            |   ALT      |     |   |     |        |        |        |       |     |
-// |                            |   GUI      |   NUM      | SPC |   | ENT |        |        |                      |
+// |                            |   GUI      |   NUM      | DEL |   | SPC |  NAV   |        |                      |
 // --------------------------------------------------------------   ------------------------------------------------
                nav_layer {
-                    display-name = "Nav";
+                    display-name = "NAV";
                     bindings = <
-     &mt ESC GRAVE       &none               &none               &none               &none               &none                   &none               &kp HOME            &kp PG_UP           &kp PG_DN           &kp END             &kp DEL
+     &mt ESC GRAVE       &none               &none               &none               &none               &none                   &none               &kp HOME            &kp PG_UP           &kp PG_DN           &kp END             &none
      &trans              &kp LS(HOME)        &kp LS(END)         &kp LC(LSHFT)       &kp LA(LSHFT)       &none                   &none               &kp LEFT            &kp DOWN            &kp UP              &kp RIGHT           &none
      &kp LSHFT           &none               &none               &none               &kp LALT            &none                   &none               &none               &none               &none               &none               &none 
-                                                                 &trans              &trans              &kp SPACE               &kp RET             &trans              &none
+                                                                 &trans              &trans              &kp DEL                 &kp SPACE               &trans              &none
                     >;
                };
 
 
 // ---------------------------------------   --------------------------------------------------
-// | BTCLR | BT1 | BT2 | BT3 |     |     |   |     | PREV   | NEXT   | PLAY/PAUSE |     |     |
-// |       |     |     |     |     |     |   |     | VOL_DN | VOL_UP | MUTE       |     |     |
-// |       |     |     |     |     |     |   |     | RHT_MB |        |            |     |     |
-// |                   |     |     |     |   |     |        |        |                        |
-// ---------------------------------------   --------------------------------------++----------
-               addtl_layer {
-                    display-name = "Addt'l";
+// | BTCLR | BT1 | BT2 | BT3 |     |     |   |     | PREV   | PLAY/PAUSE | NEXT   |     |     |
+// |       |     |     |     |     |     |   |     | VOL_DN | MUTE       | VOL_UP |     |     |
+// | BLUTH |     |     |     |     |     |   |     |        |            |        |     |     |
+// |                   |     |     |     |   |     |        |            |                    |
+// ---------------------------------------   --------------------------------------------------
+               media_layer {
+                    display-name = "MEDIA";
                     bindings = <
-// ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-     &bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &none          &none              &none          &kp C_PREV     &kp C_NEXT     &kp C_PP       &none          &none
-// ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-     &none          &none          &none          &none          &none          &none              &none          &kp C_VOL_DN   &kp C_VOL_UP   &kp C_MUTE     &none          &none
-// ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-     &none          &none          &none          &none          &none          &none              &none          &mkp RCLK      &none          &none          &none          &none
-// ╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
-                                                  &none          &trans         &none              &none          &trans         &none
-//                                              ╰──────────────┴──────────────┴──────────────╯   ╰──────────────┴──────────────┴──────────────╯
+     &none     &none     &none     &none     &none      &none              &none          &kp C_PREV     &kp C_PP      &kp C_NEXT      &none          &none
+     &none     &none     &none     &none     &none      &none              &none          &kp C_VOL_DN   &kp C_MUTE    &kp C_VOL_UP    &none          &none
+     &mo 4     &none     &none     &none     &none      &none              &none          &none          &none         &none           &none          &none
+                                   &none     &trans     &none              &none          &trans         &none
+                    >;
+               };
+
+// -----------------------------------------   -------------------------------------
+// |       |     |     |       |     |     |   |     |     |     |     |     |     |
+// |       | BT1 | BT2 | BT3   | BT4 | BT5 |   |     |     |     |     |     |     |
+// |       |     |     |       |     |     |   |     |     |     |     |     |     |
+// |                   | BTCLR |     |     |   |     |     |     |     |
+// -----------------------------------------   -------------------------------------
+               bluetooth_layer {
+                    display-name = "BLETH";
+                    bindings = <
+     &none     &none          &none          &none          &none          &none            &none     &none     &none     &none       &none      &none
+     &none     &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4     &none     &none     &none     &none       &none      &none
+     &none     &none          &none          &none          &none          &none            &none     &none     &none     &none       &none      &none
+                                             &bt BT_CLR     &trans         &none            &none     &trans    &none
                     >;
                };
         };
