@@ -6,10 +6,14 @@
 &spi1 {
     status = "okay";
 
-    nice_view_spi: nice_view_spi {
+    nice_view_spi: spi@1 {
         compatible = "nordic,nrf-spim";
         pinctrl-0 = <&spi1_default>;
         pinctrl-names = "default";
-        cs-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>; /* change if your CS pin differs */
+        sck-pin = <13>;
+        mosi-pin = <15>;
+        miso-pin = <14>;
+        cs-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
+        /* Adjust according to your actual CS pin. */
     };
 };
