@@ -40,7 +40,7 @@
                };
 
                combo_lshft {
-                    timeout-ms = <40>;
+                    timeout-ms = <50>;
                     key-positions = <15 16>;
                     bindings = <&kp LSHFT>;
                };
