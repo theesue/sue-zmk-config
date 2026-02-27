@@ -111,16 +111,16 @@
 
 
 // --------------------------------------   -------------------------------------
-// | `ESC |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |     |
-// |      |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |     |
+// | `    |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |  \  |
+// | ESC  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |     |
 // |      |     |     |     |     |     |   |     |  [  |  ]  |  {  |  }  |     |
 // |                  |     | NUM |     |   | SPC | NAV | ALT |                 |
 // --------------------------------------   -------------------------------------
                num_layer {
                     display-name = "Num";
                     bindings = <
-     &mt ESC GRAVE       &kp EXCL            &kp AT              &kp HASH            &kp DLLR            &kp PRCNT               &kp CARET           &kp AMPS            &kp ASTRK            &kp LPAR           &kp RPAR           &none
-     &none               &kp N1              &kp N2              &kp N3              &kp N4              &kp N5                  &kp N6              &kp N7              &kp N8               &kp N9             &kp N0             &none
+     &kp GRAVE           &kp EXCL            &kp AT              &kp HASH            &kp DLLR            &kp PRCNT               &kp CARET           &kp AMPS            &kp ASTRK            &kp LPAR           &kp RPAR           &kp BSLH
+     &kp ESC             &kp N1              &kp N2              &kp N3              &kp N4              &kp N5                  &kp N6              &kp N7              &kp N8               &kp N9             &kp N0             &none
      &none               &none               &none               &none               &none               &none                   &none               &kp LBKT            &kp RBKT             &kp LBRC           &kp RBRC           &none
                                                                  &none               &trans              &none                   &kp SPACE           &trans              &trans
                     >;
@@ -145,9 +145,9 @@
 
 
 // ---------------------------------------   --------------------------------------------------
-// | BTCLR | BT1 | BT2 | BT3 |     |     |   |     | PREV   | PLAY/PAUSE | NEXT   |     |     |
+// |       |     |     |     |     |     |   |     | PREV   | PLAY/PAUSE | NEXT   |     |     |
 // |       |     |     |     |     |     |   |     | VOL_DN | MUTE       | VOL_UP |     |     |
-// | BLETH |     |     |     |     |     |   |     |        |            |        |     |     |
+// |       |     |     |     |     |     |   |     |        |            |        |     |     |
 // |                   |     |     |     |   |     |        |            |                    |
 // ---------------------------------------   --------------------------------------------------
                media_layer {
