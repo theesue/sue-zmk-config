@@ -15,165 +15,119 @@
 };
 
 / {
-          conditional_layers {
-                compatible = "zmk,conditional-layers";
-                media_layer {
-                        if-layers = <1 2>;
-                        then-layer = <3>;
-                };
-          };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
 
-          // COMBO CONFIGS
-          combos {
-               compatible = "zmk,combos";
- 
-               combo_lgui {
-                    timeout-ms = <40>;
-                    key-positions = <13 14>;
-                    bindings = <&kp LGUI>;
-               };
-
-               combo_lctrl {
-                    timeout-ms = <40>;
-                    key-positions = <14 15>;
-                    bindings = <&kp LCTRL>;
-               };
-
-               combo_lshft {
-                    timeout-ms = <50>;
-                    key-positions = <15 16>;
-                    bindings = <&kp LSHFT>;
-               };
-
-               combo_ltab {
-                    timeout-ms = <50>;
-                    key-positions = <14 15 16>;
-                    bindings = <&kp TAB>;
-               };
-
-               combo_rshft {
-                    timeout-ms = <40>;
-                    key-positions = <19 20>;
-                    bindings = <&kp RSHFT>;
-               };
-
-               combo_rctrl {
-                    timeout-ms = <40>;
-                    key-positions = <20 21>;
-                    bindings = <&kp RCTRL>;
-               };
-
-               combo_rgui {
-                    timeout-ms = <40>;
-                    key-positions = <21 22>;
-                    bindings = <&kp RGUI>;
-               };
-
-               combo_renter {
-                    timeout-ms = <50>;
-                    key-positions = <19 20 21>;
-                    bindings = <&kp ENTER>;
-               };
-          };
-
-        keymap {
-                compatible = "zmk,keymap";
-
-// QWERTY LAYOUT
-// --------------------------------------   ------------------------------------------
-// | TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |   BKSP   |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |   '      |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |   SHFT   |
-// |                  | GUI | NUM | SPC |   | ENT | NAV | ALT |                      |
-// --------------------------------------   ------------------------------------------
-               default_layer {
-                    display-name = "Base";
-                    bindings = <
-//     &kp TAB               &kp Q                 &kp W                 &kp E                 &kp R                 &kp T                     &kp Y                 &kp U                 &kp I                 &kp O                 &kp P                 &kp BSPC 
-//     &kp LCTRL             &kp A                 &kp S                 &kp D                 &kp F                 &kp G                     &kp H                 &kp J                 &kp K                 &kp L                 &kp SEMI              &kp SQT 
-//     &sk LSHFT             &kp Z                 &kp X                 &kp C                 &kp V                 &kp B                     &kp N                 &kp M                 &kp COMMA             &kp DOT               &kp FSLH              &sk RSHFT  
-//                                                                       &kp LGUI              &mo 1                 &kp BSPC                  &kp SPACE             &mo 2                 &kp RALT
-
-// COLEMAK MOD-DH LAYOUT
-// ---------------------------------------   ---------------------------------------
-// | `    |  Q  |  W  |  F  |  P  |  B   |   |  J  |  L  |  U  |  Y  |  -  |   =   |
-// | ESC  |  A  |  R  |  S  |  T  |  G   |   |  M  |  N  |  E  |  I  |  O  |   ;   |
-// |      |  Z  |  X  |  C  |  D  |  V   |   |  K  |  H  |  ,  |  .  |  /  |   '   |
-// |                  | DEL | NUM | BKSP |   | SPC | NAV | ALT |                   |
-// ---------------------------------------   ---------------------------------------
-
-     &kp GRAVE          &kp Q              &kp W              &kp F              &kp P              &kp B                  &kp J              &kp L              &kp U              &kp Y              &kp MINUS          &kp EQUAL
-     &kp ESC            &kp A              &kp R              &kp S              &kp T              &kp G                  &kp M              &kp N              &kp E              &kp I              &kp O              &kp SEMI 
-     &none              &kp Z              &kp X              &kp C              &kp D              &kp V                  &kp K              &kp H              &kp COMMA          &kp DOT            &kp FSLH           &kp SQT  
-                                                              &kp DEL            &mo 1              &kp BSPC               &kp SPACE          &mo 2              &kp RALT
-                    >;
-               };
-
-
-// --------------------------------------   -------------------------------------
-// | `    |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |  \  |
-// | ESC  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |     |
-// |      |     |     |     |     |     |   |     |  [  |  ]  |  {  |  }  |     |
-// |                  |     | NUM |     |   | SPC | NAV | ALT |                 |
-// --------------------------------------   -------------------------------------
-               num_layer {
-                    display-name = "Num";
-                    bindings = <
-     &kp GRAVE           &kp EXCL            &kp AT              &kp HASH            &kp DLLR            &kp PRCNT               &kp CARET           &kp AMPS            &kp ASTRK            &kp LPAR           &kp RPAR           &kp BSLH
-     &kp ESC             &kp N1              &kp N2              &kp N3              &kp N4              &kp N5                  &kp N6              &kp N7              &kp N8               &kp N9             &kp N0             &none
-     &none               &none               &none               &none               &none               &none                   &none               &kp LBKT            &kp RBKT             &kp LBRC           &kp RBRC           &none
-                                                                 &none               &trans              &none                   &kp SPACE           &trans              &trans
-                    >;
-               };
-
-
-// --------------------------------------------------------------   ------------------------------------------------
-// | `ESC |          |          |            |            |     |   |     |  HOME  |  PGUP  |  PGDN  |  END  |     |
-// | CTRL | LS(HOME) | LS(END)  |  LC(SHFT)  |  LA(SHFT)  |     |   |     |  LFT   |  DWN   |  UP    |  RGT  |     |
-// | SHFT |          |          |            |   ALT      |     |   |     |        |        |        |       |     |
-// |                            |   GUI      |   NUM      | DEL |   | SPC |  NAV   |        |                      |
-// --------------------------------------------------------------   ------------------------------------------------
-               nav_layer {
-                    display-name = "Nav";
-                    bindings = <
-     &mt ESC GRAVE       &none               &none               &none               &none               &none                   &none               &kp HOME            &kp PG_UP           &kp PG_DN           &kp END             &none
-     &trans              &kp LS(HOME)        &kp LS(END)         &kp LC(LSHFT)       &kp LA(LSHFT)       &none                   &none               &kp LEFT            &kp DOWN            &kp UP              &kp RIGHT           &none
-     &kp LSHFT           &none               &none               &none               &kp LALT            &none                   &none               &none               &none               &none               &none               &none 
-                                                                 &trans              &trans              &kp DEL                 &kp SPACE           &trans              &none
-                    >;
-               };
-
-
-// ---------------------------------------   --------------------------------------------------
-// |       |     |     |     |     |     |   |     | PREV   | PLAY/PAUSE | NEXT   |     |     |
-// |       |     |     |     |     |     |   |     | VOL_DN | MUTE       | VOL_UP |     |     |
-// |       |     |     |     |     |     |   |     |        |            |        |     |     |
-// |                   |     |     |     |   |     |        |            |                    |
-// ---------------------------------------   --------------------------------------------------
-               media_layer {
-                    display-name = "Media";
-                    bindings = <
-     &none     &none     &none     &none     &none      &none              &none          &kp C_PREV     &kp C_PP      &kp C_NEXT      &none          &none
-     &none     &none     &none     &none     &none      &none              &none          &kp C_VOL_DN   &kp C_MUTE    &kp C_VOL_UP    &none          &none
-     &mo 4     &none     &none     &none     &none      &none              &none          &none          &none         &none           &none          &none
-                                   &none     &trans     &none              &none          &trans         &none
-                    >;
-               };
-
-// -----------------------------------------   -------------------------------------
-// |       |     |     |       |     |     |   |     |     |     |     |     |     |
-// |       | BT1 | BT2 | BT3   | BT4 | BT5 |   |     |     |     |     |     |     |
-// |       |     |     |       |     |     |   |     |     |     |     |     |     |
-// |                   | BTCLR |     |     |   |     |     |     |     |
-// -----------------------------------------   -------------------------------------
-               bluetooth_layer {
-                    display-name = "Ble";
-                    bindings = <
-     &none     &none          &none          &none          &none          &none            &none     &none     &none     &none       &none      &none
-     &none     &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4     &none     &none     &none     &none       &none      &none
-     &none     &none          &none          &none          &none          &none            &none     &none     &none     &none       &none      &none
-                                             &bt BT_CLR     &trans         &none            &none     &trans    &none
-                    >;
-               };
+        media_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
+    };
+
+    // COMBO CONFIGS
+    combos {
+        compatible = "zmk,combos";
+
+        combo_lgui {
+            timeout-ms = <40>;
+            key-positions = <13 14>;
+            bindings = <&kp LGUI>;
+        };
+
+        combo_lctrl {
+            timeout-ms = <40>;
+            key-positions = <14 15>;
+            bindings = <&kp LCTRL>;
+        };
+
+        combo_lshft {
+            timeout-ms = <45>;
+            key-positions = <15 16>;
+            bindings = <&kp LSHFT>;
+        };
+
+        combo_ltab {
+            timeout-ms = <50>;
+            key-positions = <14 15 16>;
+            bindings = <&kp TAB>;
+        };
+
+        combo_rshft {
+            timeout-ms = <40>;
+            key-positions = <19 20>;
+            bindings = <&kp RSHFT>;
+        };
+
+        combo_rctrl {
+            timeout-ms = <40>;
+            key-positions = <20 21>;
+            bindings = <&kp RCTRL>;
+        };
+
+        combo_rgui {
+            timeout-ms = <40>;
+            key-positions = <21 22>;
+            bindings = <&kp RGUI>;
+        };
+
+        combo_renter {
+            timeout-ms = <50>;
+            key-positions = <19 20 21>;
+            bindings = <&kp ENTER>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            display-name = "Base";
+            bindings = <
+&kp GRAVE  &kp Q  &kp W  &kp F    &kp P  &kp B       &kp J      &kp L  &kp U      &kp Y    &kp MINUS  &kp EQUAL
+&kp ESC    &kp A  &kp R  &kp S    &kp T  &kp G       &kp M      &kp N  &kp E      &kp I    &kp O      &kp SEMI
+&mo 4      &kp Z  &kp X  &kp C    &kp D  &kp V       &kp K      &kp H  &kp COMMA  &kp DOT  &kp FSLH   &kp SQT
+                         &kp DEL  &mo 1  &kp BSPC    &kp SPACE  &mo 2  &kp RALT
+            >;
+        };
+
+        num_layer {
+            display-name = "Num";
+            bindings = <
+&kp GRAVE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSLH
+&kp ESC    &kp N1    &kp N2  &kp N3    &kp N4    &kp N5       &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &none
+&none      &none     &none   &none     &none     &none        &none      &kp LBKT  &kp RBKT   &kp LBRC  &kp RBRC  &none
+                             &none     &trans    &none        &kp SPACE  &trans    &trans
+            >;
+        };
+
+        nav_layer {
+            display-name = "Nav";
+            bindings = <
+&trans  &none         &none        &none          &none          &none           &none      &kp HOME  &kp PG_UP  &kp PG_DN  &kp END    &none
+&trans  &kp LS(HOME)  &kp LS(END)  &kp LC(LSHFT)  &kp LA(LSHFT)  &kp LEFT_ALT    &none      &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none
+&none   &none         &none        &none          &none          &none           &none      &none     &none      &none      &none      &none
+                                   &trans         &trans         &trans          &kp SPACE  &trans    &none
+            >;
+        };
+
+        media_layer {
+            display-name = "Media";
+            bindings = <
+&none  &none  &none  &none  &none   &none    &none  &kp C_PREV    &kp C_PP    &kp C_NEXT    &none  &none
+&none  &none  &none  &none  &none   &none    &none  &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &none  &none
+&none  &none  &none  &none  &none   &none    &none  &none         &none       &none         &none  &none
+                     &none  &trans  &none    &none  &trans        &none
+            >;
+        };
+
+        bluetooth_layer {
+            display-name = "Ble";
+            bindings = <
+&none  &none         &none         &none         &none         &none           &none  &none   &none  &none  &none  &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &none   &none  &none  &none  &none
+&none  &none         &none         &none         &none         &none           &none  &none   &none  &none  &none  &none
+                                   &bt BT_CLR    &trans        &none           &none  &trans  &none
+            >;
+        };
+    };
 };
